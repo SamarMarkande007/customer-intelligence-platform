@@ -1,0 +1,6 @@
+churn_rank,country,customers,churned_customers,churn_rate_pct
+1,South Korea,215,63,29.30
+2,Germany,401,112,27.93
+3,Indonesia,249,67,26.91
+4,Nigeria,228,61,26.75
+5,France,329,86,26.14

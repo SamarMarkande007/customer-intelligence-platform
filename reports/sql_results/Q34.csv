@@ -1,0 +1,10 @@
+path_rank,migration_path,direction,customers,churned,churn_rate_pct
+1,Basic -> Basic,Same plan,128,37,28.91
+2,Standard -> Basic,Downgrade,119,31,26.05
+3,Premium -> Basic,Downgrade,114,32,28.07
+4,Standard -> Standard,Same plan,108,33,30.56
+5,Premium -> Standard,Downgrade,106,27,25.47
+6,Basic -> Standard,Upgrade,101,30,29.70
+7,Basic -> Premium,Upgrade,74,24,32.43
+8,Premium -> Premium,Same plan,69,15,21.74
+9,Standard -> Premium,Upgrade,56,10,17.86

@@ -1,0 +1,5 @@
+customer_id,failed_payment_count,current_plan,risk_score
+CUST002514,2,Basic,0.228
+CUST004108,2,Standard,0.219
+CUST005057,2,Premium,0.218
+CUST000439,2,Basic,0.200

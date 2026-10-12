@@ -1,0 +1,29 @@
+customer_id,negative_feedbacks,triggers,min_days_apart,latest_negative_feedback
+CUST005732,2,Low-CSAT ticket (<=2),6,2026-06-06
+CUST003181,2,Failed payment,3,2023-09-07
+CUST004612,1,Failed payment,5,2026-04-06
+CUST000079,1,Failed payment,10,2025-11-03
+CUST006467,1,Failed payment,3,2025-11-01
+CUST001903,1,Low-CSAT ticket (<=2),2,2025-10-01
+CUST007627,1,Failed payment,6,2025-09-23
+CUST004937,1,Low-CSAT ticket (<=2),7,2025-07-05
+CUST007920,1,Failed payment,8,2025-06-08
+CUST005917,1,Failed payment,14,2024-12-16
+CUST001568,1,Failed payment,14,2024-08-24
+CUST001959,1,Failed payment,3,2024-07-06
+CUST003504,1,Failed payment,8,2023-10-23
+CUST006180,1,Failed payment,2,2023-04-29
+CUST001463,1,Failed payment,9,2023-04-17
+CUST005682,1,Failed payment,7,2023-03-15
+CUST006594,1,Failed payment,7,2022-10-26
+CUST003910,1,Failed payment,10,2022-06-26
+CUST006800,1,Failed payment,10,2022-03-26
+CUST001146,1,Failed payment,7,2022-02-18
+CUST003536,1,Failed payment,9,2022-01-06
+CUST005629,1,Failed payment,6,2021-12-19
+CUST006254,1,Failed payment,7,2021-04-19
+CUST007854,1,Failed payment,3,2021-02-13
+CUST001764,1,Failed payment,6,2020-12-15
+CUST001105,1,Failed payment,3,2020-09-16
+CUST001296,1,Failed payment,14,2020-06-15
+CUST002757,1,Failed payment,0,2020-01-02

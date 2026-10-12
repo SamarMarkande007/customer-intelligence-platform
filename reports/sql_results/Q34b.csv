@@ -1,0 +1,5 @@
+direction,customers,churned,churn_rate_pct
+Same plan,305,85,27.87
+Downgrade,339,90,26.55
+Upgrade,231,64,27.71
+No plan change (baseline),7125,1752,24.59
