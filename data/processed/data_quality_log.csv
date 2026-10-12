@@ -1,0 +1,27 @@
+table,issue,rows_affected,action
+customers,duplicate customer rows,48,dropped exact duplicates (kept first)
+customers,inconsistent country spellings (83 variants),1035,standardised to 20 canonical countries
+customers,missing country,409,"409 inferred from most-frequent login_location, 0 set to ""Unknown"""
+customers,implausible age (<13 or >100),21,set to missing before imputation
+customers,missing age (incl. invalid),342,imputed with median age of the customer_segment
+customers,missing city,483,"set to ""Unknown"" (no reliable imputation; city is not used in modelling)"
+customers,missing preferred_language,251,"imputed with most common language of the customer's country (0 -> ""Unknown"")"
+customers,state_or_region blank for all rows,8000,left NULL (documented as reserved/empty column)
+subscriptions,end date before start date,0,none found
+subscriptions,subscription starts before registration_date,0,reported only (not modified)
+subscriptions,blank subscription_end_date (ongoing),8000,kept NULL: means still ongoing
+viewing_activity,inconsistent device labels (23 variants),10285,mapped to 5 canonical devices
+viewing_activity,missing device_type,664,filled with customer's most-used device (1 -> 'Unknown')
+viewing_activity,missing completion_percentage,531,imputed with median of the content_type
+viewing_activity,"extreme watch_duration (>240 min, 500-900 binge sessions)",161,"capped at 240 (winsorised, flag kept in is_watch_outlier)"
+viewing_activity,extreme session_duration (>300 min),161,capped at 300
+viewing_activity,"watch_duration > session_duration (impossible, session includes pauses)",6068,session_duration raised to watch_duration
+payments,subscription_id blank on every row,110735,"resolved 110,735 via customer+date window (18 rows hit overlapping boundary windows -> picked the newer subscription)"
+payments,"anomalous amounts (e.g. 2x/3x price, 76.89, 170.39)",656,restated to matched subscription price; original in amount_original
+payments,zero-amount payments,250,"kept as-is (waiver/refund), flagged"
+payments,half-price payments,206,"kept as-is (proration), flagged"
+payments,status/failed_reason inconsistent,0,none found
+support_tickets,malformed ticket_date (e.g. 2025-13-45),61,"set to NULL, flagged in ticket_date_invalid (cannot be recovered safely; excluded from time-based queries)"
+support_tickets,blank CSAT/resolution_time on Pending/Escalated,1528,"expected, kept NULL (never imputed: filling would invent satisfaction scores)"
+customer_feedback,sentiment_label contradicts rating AND text,263,relabelled from rating (validated against text); original kept in sentiment_label_original
+churn_labels,cross-check vs subscriptions.Cancelled,1991,churn labels fully consistent
