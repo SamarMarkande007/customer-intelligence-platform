@@ -1,0 +1,23 @@
+{
+  "final_model": "XGBoost",
+  "selection": "lowest cross-validated MAE",
+  "test": {
+    "cv_r2": 0.975,
+    "cv_mae": 10.659,
+    "test_MAE": 10.307,
+    "test_RMSE": 14.185,
+    "test_R2": 0.977
+  },
+  "baseline": {
+    "cv_r2": NaN,
+    "cv_mae": NaN,
+    "test_MAE": 12.102,
+    "test_RMSE": 18.783,
+    "test_R2": 0.96
+  },
+  "behaviour_only_test_r2": 0.03776414875723644,
+  "tier_cutoffs_usd": {
+    "medium_from": 97.86,
+    "high_from": 232.35
+  }
+}
