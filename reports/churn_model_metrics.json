@@ -1,0 +1,78 @@
+{
+  "final_model": "Logistic Regression",
+  "selection_rule": "highest tuned CV ROC-AUC; prefer simpler model within 1 SE",
+  "cv_auc": {
+    "Logistic Regression": 0.6001,
+    "Random Forest": 0.5949,
+    "Gradient Boosting": 0.5885,
+    "XGBoost": 0.593
+  },
+  "test_threshold_0.5": {
+    "accuracy": 0.5938144329896907,
+    "precision": 0.3096774193548387,
+    "recall": 0.5408450704225352,
+    "f1": 0.39384615384615385,
+    "roc_auc": 0.621270166453265,
+    "pr_auc": 0.33645885767928113
+  },
+  "test_operating_threshold": {
+    "threshold": 0.46,
+    "accuracy": 0.5127147766323024,
+    "precision": 0.30067567567567566,
+    "recall": 0.752112676056338,
+    "f1": 0.42960579243765085,
+    "roc_auc": 0.621270166453265,
+    "pr_auc": 0.33645885767928113
+  },
+  "test_all_models": {
+    "Logistic Regression": {
+      "accuracy": 0.594,
+      "precision": 0.31,
+      "recall": 0.541,
+      "f1": 0.394,
+      "roc_auc": 0.621,
+      "pr_auc": 0.336,
+      "tuned_cv_auc": 0.6001
+    },
+    "Random Forest": {
+      "accuracy": 0.601,
+      "precision": 0.299,
+      "recall": 0.473,
+      "f1": 0.366,
+      "roc_auc": 0.601,
+      "pr_auc": 0.337,
+      "tuned_cv_auc": 0.5949
+    },
+    "Gradient Boosting": {
+      "accuracy": 0.592,
+      "precision": 0.306,
+      "recall": 0.532,
+      "f1": 0.389,
+      "roc_auc": 0.606,
+      "pr_auc": 0.333,
+      "tuned_cv_auc": 0.5885
+    },
+    "XGBoost": {
+      "accuracy": 0.603,
+      "precision": 0.313,
+      "recall": 0.527,
+      "f1": 0.393,
+      "roc_auc": 0.616,
+      "pr_auc": 0.347,
+      "tuned_cv_auc": 0.593
+    }
+  },
+  "leakage_note": "features measured as of 2025-09-30; outcome = churn after that date",
+  "top_features": [
+    "failed_payment_count",
+    "customer_tenure_days",
+    "avg_customer_satisfaction",
+    "failed_payment_rate",
+    "has_csat",
+    "auto_renew",
+    "low_csat_count",
+    "payment_count",
+    "avg_feedback_rating",
+    "plan_changes"
+  ]
+}

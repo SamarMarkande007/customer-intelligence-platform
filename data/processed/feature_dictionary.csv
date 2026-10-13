@@ -1,0 +1,25 @@
+feature,type,description
+customer_tenure_days,PRD,Days from registration to as_of
+avg_watch_time_per_session,PRD,"Mean watch minutes per session, last 90 days"
+monthly_watch_time_trend,PRD,Slope of watch minutes across three 30-day buckets (minutes per month; negative = declining)
+days_since_last_activity,PRD,Days since last viewing session (capped at 90 = no activity in window)
+login_frequency,PRD,Sessions per month over the 90-day window
+support_ticket_count,PRD,Tickets raised up to as_of
+avg_customer_satisfaction,PRD,Mean CSAT over scored tickets (blank when no scored ticket; not imputed here)
+failed_payment_count,PRD,Failed payments up to as_of
+failed_payment_rate,PRD,Failed / all payments up to as_of
+plan_changes,PRD,Number of plan switches up to as_of
+engagement_score,PRD,"0-100 composite: 40% recency + 35% frequency (sessions, capped at 8) + 25% watch depth (completion %)"
+customer_lifetime_value,PRD,Sum of successful payments up to as_of
+watch_change_pct_30d,EXTRA,"Last-30-day vs prior-30-day watch change, bounded -1..1 (engagement momentum; EDA charts 15/21)"
+sessions_90d / minutes_90d,EXTRA,Raw engagement volume (EDA chart 21: no/low activity churns most)
+active_days_90d,EXTRA,Distinct days with viewing
+n_devices_90d,EXTRA,Distinct devices used
+avg_completion_90d,EXTRA,Mean completion % (watch depth)
+failed_payments_90d,EXTRA,Failures in the last 90 days (recent billing trouble; EDA chart 22)
+last_payment_failed,EXTRA,Whether the most recent payment failed
+last_payment_method,EXTRA,Payment method on the most recent payment
+tickets_90d / low_csat_count,EXTRA,"Recent ticket volume and number of CSAT <= 2 tickets (EDA charts 23, 29)"
+has_csat,EXTRA,Flag: customer has at least one scored ticket (CSAT is structurally missing for others)
+feedback_count / avg_feedback_rating / negative_feedback_count,EXTRA,Voice-of-customer signals
+plan_name / monthly_price / auto_renew,STATIC,Subscription state as of the date (EDA chart 24)

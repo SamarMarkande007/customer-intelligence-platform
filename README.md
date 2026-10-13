@@ -1,16 +1,16 @@
 # Netflix Customer Intelligence, Churn Prediction & AI Analytics Copilot
- 
+
 End-to-end analytics project: cleaned data, MySQL database, 37 SQL business questions, EDA (32 charts),
 ML models, a free-LLM analytics copilot and a Streamlit app.
- 
+
 ## Setup
 ```bash
 python -m venv venv
 venv\Scripts\activate            # Mac/Linux: source venv/bin/activate
 pip install -r requirements.txt
-.env           #  -> then set DB_PASSWORD
+.env                             # -> then set DB_PASSWORD
 ```
- 
+
 ## Run order
 | Step | Command / file | Output |
 |---|---|---|
@@ -20,12 +20,19 @@ pip install -r requirements.txt
 | 4 | `database/sql_business_questions.sql` (open in MySQL Workbench) | answers to all 37 questions |
 | 4b | `python database/run_queries.py` | runs all queries, saves results to `reports/sql_results/` |
 | 5 | `notebooks/02_exploratory_analysis.ipynb` | 32 charts in `reports/figures/` |
-| 6+ | feature engineering, ML, copilot, Streamlit | coming next |
- 
+| 6 | `notebooks/03_feature_engineering.ipynb` (uses `src/features/build_features.py`) | `features_snapshot.csv`, `customer_features.csv`, `feature_dictionary.csv` |
+| 7 | `notebooks/04_churn_prediction.ipynb` | `models/churn_model.joblib`, `reports/churn_model_metrics.json`, `churn_scores.csv` |
+| 8+ | segmentation, CLV, copilot, Streamlit | coming next |
+
 ## Key decisions
 - "Today" = **2026-06-30** (latest date in the data). Payments stop on 2026-05-31, so payment windows use `MAX(payment_date)`.
 - "Active customer" = `churn_labels.churned = 0`. "Current plan" = latest `subscriptions` row.
 - Every cleaning decision is logged in `data/processed/data_quality_log.csv`.
+
+## Modelling approach (leakage-safe)
+Features are computed *as of a date* using only earlier records. The churn model trains on a 2025-09-30 snapshot and predicts churn in the following
+9 months, then scores today's active customers. Honest test ROC-AUC is about 0.62; a leaky build reaches 0.71 but is not usable (shown in notebook 03).
+
 ## Data quirks worth knowing
 - Churn dates only exist from **2025-10-03** onward, so monthly churn is 0 for Jul-Sep 2025 and old cohorts show 100% early retention.
 - Within a customer, `subscriptions.monthly_price` never changes (the old row carries the new plan's price). "Price change" in Q29 therefore means a plan switch with a different list price.
