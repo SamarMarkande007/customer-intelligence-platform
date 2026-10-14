@@ -1,0 +1,1 @@
+{"text": "```sql\nSELECT \n    c.country, \n    COUNT(*) AS active_customers\nFROM customers c\nJOIN churn_labels cl ON cl.customer_id = c.customer_id\nWHERE cl.churned = 0\nGROUP BY c.country\nORDER BY active_customers DESC\nLIMIT 3;\n```"}

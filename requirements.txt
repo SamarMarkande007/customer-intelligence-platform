@@ -1,5 +1,9 @@
 pandas>=2.0
 numpy
+scipy
+scikit-learn
+xgboost
+joblib
 sqlalchemy>=2.0
 pymysql
 cryptography
@@ -8,10 +12,6 @@ jupyter
 matplotlib
 seaborn
 plotly
-scikit-learn
-xgboost
-joblib
-streamlit
-chromadb
-sentence-transformers
-openai          # works with Groq / Gemini / Mistral / Ollama through their OpenAI-compatible endpoints
+streamlit>=1.35
+openai          
+pytest         
