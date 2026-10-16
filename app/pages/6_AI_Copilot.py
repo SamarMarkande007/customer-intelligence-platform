@@ -62,7 +62,10 @@ if st.session_state.msgs and st.button("🗑 Clear conversation"):
 
 for msg in st.session_state.msgs:
     with st.chat_message(msg["role"], avatar="🧑‍💼" if msg["role"] == "user" else "🤖"):
-        render(msg["res"]) if msg["role"] == "assistant" else st.markdown(msg["content"])
+        if msg["role"] == "assistant":
+            render(msg["res"])
+        else:
+            st.markdown(msg["content"])
 
 prompt = st.chat_input("Ask anything about customers, churn, revenue, complaints…") or clicked
 if prompt:

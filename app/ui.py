@@ -19,7 +19,8 @@ CSS = """
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 html, body, [class*="css"], .stApp { font-family: 'Inter', sans-serif; }
 .stApp { background: radial-gradient(1200px 500px at 85% -10%, rgba(229,9,20,.10), transparent 60%), #0B0B0F; }
-#MainMenu, footer, [data-testid="stToolbar"], [data-testid="stDecoration"] { display:none !important; }
+#MainMenu, footer, [data-testid="stDecoration"], [data-testid="stToolbarActions"], [data-testid="stMainMenu"], [data-testid="stAppDeployButton"], .stDeployButton { display:none !important; }
+[data-testid="stExpandSidebarButton"], [data-testid="stSidebarCollapsedControl"], [data-testid="stSidebarCollapseButton"] { display:flex !important; visibility:visible !important; opacity:1 !important; }
 header[data-testid="stHeader"] { background: transparent; }
 .block-container { padding-top: 1.6rem; padding-bottom: 3rem; max-width: 1480px; }
 h1,h2,h3,h4 { letter-spacing: -0.02em; }
